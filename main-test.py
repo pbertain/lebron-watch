@@ -4,24 +4,24 @@
 # Author: Paul Bertain
 # Date: 2022-12-18
 # Source: python-script-template.py
+# IntelliJ Git notes: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
-import sys
 import argparse
-import logging
-from logging import critical, error, info, warning, debug
 
 import get_player_id
 import get_player_points
 
+
 def parse_arguments():
     """Read arguments from a command line."""
     parser = argparse.ArgumentParser(description='Arguments get parsed via --commands')
-    parser.add_argument('-n', metavar='name', type=str,
-        help='Name of NBA player: full name to avoid confusion')
+    parser.add_argument('-v', metavar='verbosity', type=int, default=2,
+        help='Verbosity of logging: 0 -critical, 1 -error, 2 -warning, 3 -info, 4 -debug')
 
     args = parser.parse_args()
-    #name = {0: logging.CRITICAL, 1: logging.ERROR, 2: logging.WARNING, 3: logging.INFO, 4: logging.DEBUG}
-    #logging.basicConfig(filename='python-scripts.log',level=name[args.v])
+    verbose = {0: logging.CRITICAL, 1: logging.ERROR, 2: logging.WARNING, 3: logging.INFO, 4: logging.DEBUG}
+    logging.basicConfig(format='%(message)s', level=verbose[args.v], stream=sys.stdout)
+    #logging.basicConfig(filename='python-scripts.log',level=verbose[args.v])
 
     return args
     
