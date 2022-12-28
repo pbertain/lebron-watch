@@ -49,9 +49,9 @@ true_date_fmt = datetime.strptime(true_game_date, '%Y-%m-%d')
 sample_date_fmt = datetime.strptime(sample_date, '%Y-%m-%d')
 
 if (true_date_fmt.date() == datetime.today().date()):
-    print("The Lakers played today!")
+    print("the Lakers played today!")
 else:
-    print("The Lakers were off today.")
+    print("the Lakers were off today.")
 
 #if (sample_date_fmt.date() == datetime.today().date()):
 #    print("Sample games match")
