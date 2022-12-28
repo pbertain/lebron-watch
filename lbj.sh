@@ -1,6 +1,7 @@
 #!/bin/bash
 
-NBA_DATE=`echo "\`date '+%a %m-%d %H:%M'\`: "`
+NBA_DATE=`date '+%a %m-%d'`
+NBA_TIME=`date '+%l:%M%p'`
 NBA_PYTHON="/usr/bin/python3"
 NBA_SCRIPT="/Users/paulb/Documents/version-control/git/lebron-watch/main.py"
 DATE_CHECK="/Users/paulb/Documents/version-control/git/lebron-watch/date-check.py"
