@@ -7,6 +7,7 @@
 # IntelliJ Git notes: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 import argparse
+from logging import critical, error, info, warning, debug
 
 import get_player_id
 import get_player_points
@@ -19,8 +20,8 @@ def parse_arguments():
                         help='Verbosity of logging: 0 -critical, 1 -error, 2 -warning, 3 -info, 4 -debug')
 
     args = parser.parse_args()
-    verbose = {0: logging.CRITICAL, 1: logging.ERROR, 2: logging.WARNING, 3: logging.INFO, 4: logging.DEBUG}
-    logging.basicConfig(format='%(message)s', level=verbose[args.v], stream=sys.stdout)
+    #verbose = {0: logging.CRITICAL, 1: logging.ERROR, 2: logging.WARNING, 3: logging.INFO, 4: logging.DEBUG}
+    #logging.basicConfig(format='%(message)s', level=verbose[args.v], stream=sys.stdout)
     # logging.basicConfig(filename='python-scripts.log',level=verbose[args.v])
 
     return args
@@ -30,11 +31,9 @@ def get_id(name_of_the_player):
     player_id = get_player_id.get_id(name_of_the_player)
     return (player_id)
 
-
 def get_career_points(player_id):
     career_points = get_player_points.get_points(player_id)
     return (career_points)
-
 
 def main():
     # list of players
@@ -52,10 +51,10 @@ def main():
     kareem_points = points_dict['Kareem Abdul-Jabbar']
     if (lebron_points < kareem_points):
         lebron_diff = kareem_points - lebron_points + 1
-        print("LeBron needs %d points to pass Kareem" % lebron_diff)
+        print("Kareem > LeBron by %d points" % lebron_diff)
     else:
         kareem_diff = lebron_points - kareem_points
-        print("LeBron is %d points past Kareem" % kareem_diff)
+        print("LeBron > Kareem by %d points" % kareem_diff)
 
 
 if __name__ == '__main__':
