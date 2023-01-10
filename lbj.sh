@@ -1,10 +1,11 @@
 #!/bin/bash
 
+NBA_PATH="/Users/paulb/Dropbox/home/tech/nba/lebron-watch"
 NBA_DATE=`date '+%a %m-%d'`
 NBA_TIME=`date '+%l:%M%p'`
 NBA_PYTHON="/usr/bin/python3"
-NBA_SCRIPT="/Users/paulb/Documents/version-control/git/lebron-watch/main.py"
-DATE_CHECK="/Users/paulb/Documents/version-control/git/lebron-watch/date-validate.py"
+NBA_SCRIPT="${NBA_PATH}/main.py"
+DATE_CHECK="${NBA_PATH}/date-validate.py"
 NBA_DATA=`${NBA_PYTHON} ${NBA_SCRIPT}`
 LAKERS_GAME_CHECK=`${NBA_PYTHON} ${DATE_CHECK}`
 
