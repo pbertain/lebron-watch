@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.pbertain.nba-dame-scoring-watch</string>
+	<key>RunAtLoad</key>
+	<false/>
+	<key>StandardErrorPath</key>
+	<string>/tmp/nba-fun-stderr.log</string>
+	<key>StandardOutPath</key>
+	<string>/tmp/nba-fun-stdout.log</string>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/paulb/sbin</string>
+	</dict>
+	<key>WorkingDirectory</key>
+	<string>/Users/paulb/Dropbox/home/tech/nba/dame-watch</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/paulb/Dropbox/home/tech/nba/dame-watch/dame.sh</string>
+	</array>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>22</integer>
+		<key>Minute</key>
+		<integer>00</integer>
+	</dict>
+</dict>
+</plist>
